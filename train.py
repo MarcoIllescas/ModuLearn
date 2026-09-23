@@ -2,8 +2,7 @@ import torch
 import torch.nn as nn
 from utils.device import get_device
 from datasets.mnist import get_mnist_dataset
-from models.mlp import MLP
-from models.cnn import CNN
+from models.factory import create_model
 from engine.trainer import fit, evaluate
 from utils.plotting import plot_history
 from callbacks.early_stopping import EarlyStopping
@@ -32,8 +31,7 @@ def main() -> None:
         ) #obtener los dataloaders
 
     ## Model
-    model = CNN()
-    # model = MLP()
+    model = create_model("vgg11")
     model = model.to(device) #mover el modelo al dispositivo
 
     #entrenamiento
