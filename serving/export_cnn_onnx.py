@@ -9,11 +9,11 @@ def main() -> None:
 
     state_dict = torch.load(
         '../artifacts/best_model.pth',
-        map_location = 'cpu'
+        map_location = 'cpu',
         weights_only = True
     )
 
-    model.load_state_state_dict(state_dict)
+    model.load_state_dict(state_dict)
     model.eval()
 
     dummy_input = torch.randn(
