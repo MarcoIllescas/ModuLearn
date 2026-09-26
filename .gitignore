@@ -2,6 +2,7 @@
 # Raw data files
 # ============================
 data/**/raw/*
+*.csv
 
 # ============================
 # Trained models / artifacts
